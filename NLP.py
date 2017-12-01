@@ -3,7 +3,9 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 import aiml
-import random, re 
+
+
+
 
 
 
@@ -63,19 +65,18 @@ def NLP(message) :
         #print (w) 
     
     for w in Reference_found :
-        if w == "hello" :
-            #entering aiml sentence   
+        if w == "hello" :  
             response = mybot.respond("hello")
             print (response)
-            return True 
         else :
             print("Can YOu try again ? ")
-            return False
+
+
 
 
 
 mybot=aiml.Kernel()
-mybot.learn('test_chat.aiml')
+mybot.learn('basic_chat.aiml')
 
 
 while True:
@@ -85,7 +86,20 @@ while True:
     else:
         response = mybot.respond(message)
         print (response)
-        test = False 
         if response == "" :
-            test = NLP(message)
+            NLP(message)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
